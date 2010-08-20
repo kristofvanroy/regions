@@ -1,0 +1,12 @@
+<?php
+
+function regions_preprocess_page(&$vars) {
+  global $theme;
+
+  $regions = system_region_list($theme);
+
+  foreach ($regions as $key => $value) {
+    $vars[$key] = 'REGIONS'.$vars[$key];
+  }
+
+}
